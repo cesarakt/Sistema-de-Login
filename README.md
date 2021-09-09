@@ -7,7 +7,7 @@ Este projeto foi desenvolvido como desafio para um simples sistema de login e ca
 * [React Native](https://reactnative.dev/)
 * [Yarn](https://yarnpkg.com/)
 * [Expo](https://docs.expo.io/)
-* [Firebase] (https://firebase.google.com/docs)
+* [Firebase](https://firebase.google.com/docs)
 
 ## Como Utilizar
 

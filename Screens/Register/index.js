@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Button, Keyboard } from 'react-native';
 
 import firebase from '../../src/firebaseConnection';
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation, StackActions } from '@react-navigation/core';
 
 import styles from './styles';
 
@@ -17,8 +17,8 @@ export default function Register() {
     async function cadastrar() {
         await firebase.auth().createUserWithEmailAndPassword(email, senha)
             .then((value) => {
-                alert('Usuario criado ' + value.user.email);
-                navigation.navigate('Login', { nome: nome });
+                alert(`Usuario ${value.user.email} criado com sucesso!`);
+                navigation.navigate('Login');
             })
             .catch((error) => {
                 if (error.code === 'auth/weak-password') {
@@ -52,7 +52,7 @@ export default function Register() {
                 />
                 <Text style={styles.texto}>Senha</Text>
                 <TextInput
-                    placeholder='crie uma senha'
+                    placeholder='Crie uma senha'
                     style={styles.input}
                     value={senha}
                     onChangeText={getSenha}
