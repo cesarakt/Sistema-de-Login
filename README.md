@@ -2,6 +2,8 @@
 
 Este projeto foi desenvolvido como desafio para um simples sistema de login e cagastro de usuário utilizando o Authentication do firebase dentro do React Native.
 
+![alt text](assets/sistema-gif.gif)
+
 ## Ferramentas Utilizadas
 
 * [React Native](https://reactnative.dev/)
