@@ -17,7 +17,7 @@ export default function Login() {
     async function acessar() {
         await firebase.auth().signInWithEmailAndPassword(email, senha)
             .then((value) => {
-                navigation.navigate('Home', { email : email });
+                navigation.navigate('Home', { email: email });
             })
             .catch((error) => {
                 alert('Senha ou email inválidos');
@@ -41,7 +41,6 @@ export default function Login() {
                     style={styles.input}
                     value={email}
                     onChangeText={getEmail}
-                    secureTextEntry={true}
                 />
                 <Text style={styles.texto}>Senha</Text>
                 <TextInput
@@ -49,7 +48,7 @@ export default function Login() {
                     style={styles.input}
                     value={senha}
                     onChangeText={getSenha}
-                    
+                    secureTextEntry={true}
                 />
                 <View style={styles.btn}>
                     <Button
