@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Button, Keyboard } from 'react-native';
+
+import firebase from '../../src/firebaseConnection';
 import { useNavigation } from '@react-navigation/core';
 
 import styles from './styles';
@@ -9,12 +11,22 @@ export default function Login() {
     const [senha, setSenha] = useState('');
 
     const navigation = useNavigation();
-
     const getEmail = texto => setEmail(texto);
     const getSenha = texto => setSenha(texto);
 
-    function acessar() {
-        navigation.navigate('Home');
+    async function acessar() {
+        await firebase.auth().signInWithEmailAndPassword(email, senha)
+            .then((value) => {
+                navigation.navigate('Home', { email : email });
+            })
+            .catch((error) => {
+                alert('Senha ou email inválidos');
+                console.log(error);
+            })
+
+        setEmail('')
+        setSenha('')
+        Keyboard.dismiss();
     }
 
     function irCadastro() { navigation.navigate('Register'); }
@@ -29,6 +41,7 @@ export default function Login() {
                     style={styles.input}
                     value={email}
                     onChangeText={getEmail}
+                    secureTextEntry={true}
                 />
                 <Text style={styles.texto}>Senha</Text>
                 <TextInput
@@ -36,10 +49,11 @@ export default function Login() {
                     style={styles.input}
                     value={senha}
                     onChangeText={getSenha}
+                    
                 />
                 <View style={styles.btn}>
                     <Button
-                        title='Acessar'
+                        title='Entrar'
                         onPress={acessar}
                     />
                 </View>
