@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Keyboard } from 'react-native';
+import { View, Text, TextInput, Button } from 'react-native';
 
-import firebase from '../../src/firebaseConnection';
-import { useNavigation, StackActions } from '@react-navigation/core';
+import firebase from '../../connections/firebaseConnection';
+import { useNavigation } from '@react-navigation/core';
 
 import styles from './styles';
 

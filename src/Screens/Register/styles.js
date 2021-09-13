@@ -1,25 +1,24 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#FFF'
+        alignItems: 'center'
     },
     titulo: {
         fontSize: 30,
         marginBottom: 10,
         textAlign: 'center'
     },
-    areaInput: {
+    inputArea: {
         width: 300,
         padding: 15,
         justifyContent: 'flex-start',
         borderRadius: 3,
         shadowColor: '#000',
-        shadowOffset:{width: 0, height: 1},
-        elevation: 0.8
+        shadowOffset:{width: 0, height: 3},
+        elevation: 1.3
     },
     texto: {
         fontSize: 20,

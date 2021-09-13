@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-import firebase from '../../src/firebaseConnection';
+import firebase from '../../connections/firebaseConnection';
 import { useNavigation, StackActions } from '@react-navigation/core';
 import styles from './styles';
 
